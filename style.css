@@ -1,0 +1,301 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Landing Page (index.html) */
+body.landing {
+    background: #f5e6e8; /* Soft cream pink */
+    font-family: 'Caveat', cursive;
+    color: #8a5a7b; /* Muted plum */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.landing-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.landing-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(138, 90, 123, 0.3);
+}
+
+.puzzle-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #d9b8c4; /* Muted dusty rose */
+    color: #5a3d4f; /* Darker plum */
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 25px;
+    border: 2px solid #b58ea0; /* Soft lavender border */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.puzzle-button:hover {
+    background: #b58ea0; /* Lavender on hover */
+    transform: scale(1.05);
+}
+
+/* Puzzle Page (puzzle.html) */
+body.puzzle {
+    background: #f5e6e8; /* Soft cream pink */
+    font-family: 'Caveat', cursive;
+    color: #8a5a7b; /* Muted plum */
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+h1#tagline {
+    font-size: 3em;
+    text-align: center;
+    padding-top: 20px;
+    text-shadow: 1px 1px 3px rgba(138, 90, 123, 0.3);
+}
+
+#puzzle-area {
+    margin: 50px auto;
+    width: 600px;
+    padding: 20px;
+    background: #fffaf7; /* Off-white with a pinkish tint */
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(181, 142, 160, 0.5); /* Soft lavender shadow */
+    position: relative;
+}
+
+#puzzle-area p {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #b58ea0; /* Lavender */
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(6, 80px);
+    grid-gap: 5px;
+    position: relative;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background: #d9b8c4; /* Dusty rose */
+    border: 2px solid #b58ea0; /* Lavender border */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.cell:hover { background: #e6ccd5; /* Lighter rose on hover */ }
+.cell.x { background: #b58ea0; color: #5a3d4f; } /* Lavender for X */
+.cell.y { background: #f0d9e0; color: #8a5a7b; } /* Pale pink for Y */
+
+.clue {
+    position: absolute;
+    font-size: 1.5em;
+    color: #b58ea0; /* Lavender */
+    text-shadow: 0 0 5px rgba(181, 142, 160, 0.5);
+}
+
+#check-solution {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #d9b8c4; /* Dusty rose */
+    border: 2px solid #b58ea0; /* Lavender */
+    color: #5a3d4f; /* Darker plum */
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#check-solution:hover {
+    background: #b58ea0; /* Lavender */
+    transform: scale(1.05);
+}
+
+#grok-taunt {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8em;
+    color: #b58ea0; /* Lavender */
+    text-shadow: 0 0 5px rgba(181, 142, 160, 0.5);
+}
+
+/* Trippy Page (trippy.html) */
+body.trippy {
+    background: radial-gradient(circle, #e6e6fa, #c8a2c8, #9370db); /* Lavender, lilac, medium purple */
+    animation: swirl 10s infinite;
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+    font-family: 'Caveat', cursive;
+}
+
+@keyframes swirl {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.word {
+    position: absolute;
+    color: #6a5acd; /* Slate blue */
+    font-size: 1.5em;
+    text-shadow: 0 0 10px rgba(106, 90, 205, 0.7);
+}
+
+@keyframes moveUp { 0% { top: 100%; } 100% { top: -50px; } }
+@keyframes moveDown { 0% { top: -50px; } 100% { top: 100%; } }
+@keyframes moveLeft { 0% { left: 100%; } 100% { left: -50px; } }
+@keyframes moveRight { 0% { left: -50px; } 100% { left: 100%; } }
+
+#timer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: #9370db; /* Medium purple */
+    text-shadow: 0 0 10px rgba(147, 112, 219, 0.7);
+}
+
+#weed-button {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#to-poem {
+    background: #c8a2c8; /* Lilac */
+    border: 2px solid #9370db; /* Medium purple */
+    padding: 15px 25px;
+    color: #483d8b; /* Dark slate blue */
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(147, 112, 219, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#to-poem:hover {
+    background: #9370db; /* Medium purple */
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(147, 112, 219, 0.7);
+}
+
+/* Poem Page (poem.html) */
+body.poem {
+    background: radial-gradient(circle, #1a1a2e, #483d8b, #9370db); /* Black to deep purple to medium purple */
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace; /* Typewriter font */
+    overflow: hidden;
+    position: relative;
+}
+
+.poem-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.rocket, .particle, .comet {
+    position: absolute;
+    text-shadow: 0 0 5px rgba(147, 112, 219, 0.7);
+}
+
+.rocket {
+    font-size: 1.5em;
+    color: #e6e6fa; /* Bright lavender */
+    animation: fall 4s linear infinite;
+}
+
+.particle {
+    font-size: 0.8em;
+    color: #c8a2c8; /* Lilac */
+    animation: fall 3s ease-in infinite;
+}
+
+.comet {
+    width: 2px;
+    height: 20px;
+    background: #ff69b4; /* Hot pink */
+    box-shadow: 0 0 10px #ff69b4;
+    animation: fall 2s linear infinite;
+}
+
+@keyframes fall {
+    0% { top: -50px; opacity: 1; transform: translateX(0) rotate(0deg); }
+    100% { top: 100vh; opacity: 0; transform: translateX(20px) rotate(15deg); }
+}
+
+#poem-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 90vw;
+    padding: 20px;
+}
+
+#poem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#poem p {
+    font-size: clamp(0.9em, 1.8vw, 1.3em); /* Small, screen-fitting */
+    color: #e6e6fa; /* Bright lavender */
+    text-shadow: 0 0 8px rgba(230, 230, 250, 0.8), 0 0 15px rgba(147, 112, 219, 0.5); /* Neon glow */
+    margin: 6px 0;
+    white-space: pre;
+    overflow: hidden;
+    opacity: 1;
+}
+
+#replay {
+    background: #9370db; /* Medium purple */
+    border: 2px solid #e6e6fa;
+    padding: 12px;
+    color: #1a1a2e; /* Dark for contrast */
+    font-size: 1.2em;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#replay:hover {
+    background: #c8a2c8;
+    transform: scale(1.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
