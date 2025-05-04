@@ -1,0 +1,36 @@
+.landing-container {
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f5e6e8; /* Soft cream pink */
+  font-family: 'Caveat', cursive;
+  color: #8a5a7b; /* Muted plum */
+}
+
+.landing-container h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 3px rgba(138, 90, 123, 0.3);
+}
+
+.puzzle-button {
+  padding: 15px 30px;
+  background: #d9b8c4; /* Muted dusty rose */
+  color: #5a3d4f; /* Darker plum */
+  text-decoration: none;
+  font-size: 1.5em;
+  border-radius: 25px;
+  border: 2px solid #b58ea0; /* Soft lavender border */
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+}
+
+.puzzle-button:hover {
+  background: #b58ea0; /* Lavender on hover */
+  transform: scale(1.05);
+}

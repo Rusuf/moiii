@@ -1,0 +1,94 @@
+.puzzle-page {
+  background: #f5e6e8; /* Soft cream pink */
+  font-family: 'Caveat', cursive;
+  color: #8a5a7b; /* Muted plum */
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  padding-top: 20px;
+}
+
+h1#tagline {
+  font-size: 3em;
+  text-align: center;
+  padding-top: 20px;
+  text-shadow: 1px 1px 3px rgba(138, 90, 123, 0.3);
+}
+
+#puzzle-area {
+  margin: 50px auto;
+  width: 600px;
+  padding: 20px;
+  background: #fffaf7; /* Off-white with a pinkish tint */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(181, 142, 160, 0.5); /* Soft lavender shadow */
+  position: relative;
+}
+
+#puzzle-area p {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #b58ea0; /* Lavender */
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+  grid-gap: 5px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.cell {
+  width: 80px;
+  height: 80px;
+  background: #d9b8c4; /* Dusty rose */
+  border: 2px solid #b58ea0; /* Lavender border */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cell:hover { background: #e6ccd5; /* Lighter rose on hover */ }
+.cell.x { background: #b58ea0; color: #5a3d4f; } /* Lavender for X */
+.cell.y { background: #f0d9e0; color: #8a5a7b; } /* Pale pink for Y */
+
+.clue {
+  position: absolute;
+  font-size: 1.5em;
+  color: #b58ea0; /* Lavender */
+  text-shadow: 0 0 5px rgba(181, 142, 160, 0.5);
+}
+
+#check-solution {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #d9b8c4; /* Dusty rose */
+  border: 2px solid #b58ea0; /* Lavender */
+  color: #5a3d4f; /* Darker plum */
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  font-family: 'Caveat', cursive;
+}
+
+#check-solution:hover {
+  background: #b58ea0; /* Lavender */
+  transform: scale(1.05);
+}
+
+#grok-taunt {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.8em;
+  color: #b58ea0; /* Lavender */
+  text-shadow: 0 0 5px rgba(181, 142, 160, 0.5);
+}

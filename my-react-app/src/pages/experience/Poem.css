@@ -1,0 +1,113 @@
+.poem-page {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Caveat', cursive;
+  color: #fff;
+  background: #1a1a2e; /* Deep navy background */
+}
+
+.poem-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+.particle, .comet, .rocket {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: fall infinite linear;
+  z-index: 1;
+}
+
+.particle {
+  width: 2px;
+  height: 2px;
+  box-shadow: 0 0 3px 1px white;
+}
+
+.comet {
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 0 15px 5px #b58ea0, 0 0 30px 10px #f0d9e0;
+  transform: rotate(225deg);
+}
+
+.rocket {
+  font-size: 20px;
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10px) rotate(0); }
+  100% { transform: translateY(105vh) rotate(360deg); }
+}
+
+#poem-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2em;
+}
+
+#poem {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 2em;
+  border-radius: 15px;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 0 20px rgba(181, 142, 160, 0.5);
+}
+
+#poem p {
+  margin-bottom: 1em;
+  line-height: 1.6;
+  font-size: 1.4em;
+  opacity: 0.9;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+  color: #f0d9e0; /* Pale pink text */
+}
+
+#poem p.pulse {
+  animation: pulse 5s infinite alternate;
+}
+
+#replay {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 30px;
+  background: rgba(181, 142, 160, 0.3); /* Semi-transparent lavender */
+  color: #f0d9e0; /* Pale pink text */
+  border: 2px solid #b58ea0; /* Lavender border */
+  font-size: 1.5em;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Caveat', cursive;
+  box-shadow: 0 0 15px rgba(181, 142, 160, 0.5);
+  transition: background 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+}
+
+#replay:hover {
+  background: rgba(181, 142, 160, 0.6);
+  transform: translateX(-50%) scale(1.05);
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
